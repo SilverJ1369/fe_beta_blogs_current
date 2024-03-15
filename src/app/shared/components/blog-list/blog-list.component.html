@@ -6,6 +6,11 @@
       <h2>{{ blog.title }}</h2>
       <p>{{ blog.user?.username }}</p>
       <p>{{ blog.content }}</p>
+      @if (blog.liked) {
+        <mat-icon (click)="toggleLiked(blog.id)">favorite</mat-icon>
+        }@else {
+        <mat-icon (click)="toggleLiked(blog.id)">favorite_border</mat-icon>
+        }
     </div>
     <img
       [src]="
